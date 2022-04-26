@@ -1,0 +1,43 @@
+[
+      {
+        "id": "11-30-tidligt-i-seng",
+        "time": "11:30",
+        "url": "11-30-tidligt-i-seng.html",
+        "square" : "01-rep.jpg",
+        "title": "Tidligt i seng",
+        "description": "Der er noget fascinerende ved bjerge. De rå bjerge, græsbeklædte bjerge og vand i bjergene udgør fantastiske naturscenarier.",
+        "author": "Anette Bertelsen",
+        "templates": [
+          {
+            "template": "01",
+            "media": [
+              {
+                "image": "02-rep.jpg",
+                "text": "02-rep.jpg billedtekst"
+              },
+              {
+                "image": "03-rep.jpg",
+                "text": "03-rep.jpg billedtekst"
+              }
+            ]
+          },{
+            "template": "02",
+            "media": [
+                {
+                    "image": "04-rep.jpg",
+                    "text": "04-rep.jpg billedtekst"
+                }
+            ]
+          },{
+            "template": "03",
+            "media": [
+                {
+                    "image": "05-rep.jpg",
+                    "text": "05-rep.jpg billedtekst"
+                }
+            ]
+          }
+        ]
+      }
+    
+]
