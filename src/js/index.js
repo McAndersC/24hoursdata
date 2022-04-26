@@ -4,6 +4,7 @@ const app = {};
 let subpageHeaderTemplate = (moment) => `<div>
 
     <div>
+
         <h1>${moment.time} - ${moment.title}</h1>
         <p>${moment.description}</p>
         <p>${moment.author}</p>
@@ -14,30 +15,85 @@ let subpageHeaderTemplate = (moment) => `<div>
 
 </div>`
 
-let momentTemplate = (moment) => moment.templates.map((template) => {
+// Template 01
+let momentTemplate01 = (template) => {
 
     return `<div>
-        <h2>Template ${template.template}</h2>
-            ${template.media.map((media) => {
+           ${template.template}
+           <pre>${JSON.stringify(template, null, 2)}</pre>
 
+           ${template.media.map( (media) => {
 
                 return `<div>
-                <img src="assets/${moment.id}/${media.image}" />
-                <p>${media.text}</p>
+                    ${media.image}
+                    ${media.text}
                 </div>`
 
-            }).join('')}
-    </div>`
+           } ).join('')}
+        </div>`
+}
 
+// Template 02
+let momentTemplate02 = (template) => {
 
-}).join('')
+    return `<div>
+           ${template.template}
+           <pre>${JSON.stringify(template, null, 2)}</pre>
+        </div>`
+}
+
+// Template 03
+let momentTemplate03 = (template) => {
+
+    return `<div>
+           ${template.template}
+           <pre>${JSON.stringify(template, null, 2)}</pre>
+        </div>`
+}
+
+// Rendere moment
+app.renderMoment = (moment) => {
+
+    // Moment Container
+    let momentContainer = document.querySelector('.moment-container');
+    momentContainer.innerHTML = '';
+    // Indsætter moment Header
+    momentContainer.insertAdjacentHTML('afterbegin', subpageHeaderTemplate(moment))
+
+    // Indsætter moment template(s)
+    moment.templates.forEach((template) => {
+
+        switch (template.template) {
+    
+            case '01':
+
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate01(template))
+
+                break;
+
+            case '02':
+
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate02(template))
+
+                break;
+
+            case '03':
+
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate03(template))
+
+                break;
+        }
+    })
+}
 
 app.init = () => {
 
     let moments = [];
+
+    // Debug Elementer på forsiden
     let dataDebugElement = document.querySelector('.data-debug');
     let momentDebugElement = document.querySelector('.moment-debug');
-    let momentContainer = document.querySelector('.moment-container');
+
     // Henter vores data.
     fetch('.data/moments.json').then((response) => response.json()).then((response) => {
 
@@ -45,21 +101,21 @@ app.init = () => {
 
             moments = response;
            
+            // Udskriver debug data til forsiden
             if(dataDebugElement)
             {
                 dataDebugElement.insertAdjacentHTML('afterbegin', JSON.stringify(moments, null, 2));
                 momentDebugElement.insertAdjacentHTML('afterbegin', JSON.stringify(moments[0], null, 2));
             }
          
+            // Her hardcoder vi første moment og renderer dette moment.
+            let moment = moments[0];
+            app.renderMoment(moment)
      
-
-            momentContainer.insertAdjacentHTML('afterbegin', subpageHeaderTemplate(moments[0]))
-            momentContainer.insertAdjacentHTML('beforeend', momentTemplate(moments[0]))
-
+        
         }, 0);
   
     });
-
 
 }
 
