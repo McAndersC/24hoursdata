@@ -16,17 +16,16 @@ let subpageHeaderTemplate = (moment) => `<div>
 </div>`
 
 // Template 01
-let momentTemplate01 = (template) => {
+let momentTemplate01 = (moment, template) => {
 
-    return `<div>
+    return `<hr/><div>
            ${template.template}
-           <pre>${JSON.stringify(template, null, 2)}</pre>
-
+        
            ${template.media.map( (media) => {
 
                 return `<div>
-                    ${media.image}
-                    ${media.text}
+                    <img src="assets/${moment.id}/${media.image}" />
+                    <p>${media.text}</p>
                 </div>`
 
            } ).join('')}
@@ -34,18 +33,18 @@ let momentTemplate01 = (template) => {
 }
 
 // Template 02
-let momentTemplate02 = (template) => {
+let momentTemplate02 = (moment, template) => {
 
-    return `<div>
+    return `<hr/><div>
            ${template.template}
            <pre>${JSON.stringify(template, null, 2)}</pre>
         </div>`
 }
 
 // Template 03
-let momentTemplate03 = (template) => {
+let momentTemplate03 = (moment, template) => {
 
-    return `<div>
+    return `<hr/><div>
            ${template.template}
            <pre>${JSON.stringify(template, null, 2)}</pre>
         </div>`
@@ -67,25 +66,26 @@ app.renderMoment = (moment) => {
     
             case '01':
 
-                momentContainer.insertAdjacentHTML('beforeend', momentTemplate01(template))
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate01(moment, template))
 
                 break;
 
             case '02':
 
-                momentContainer.insertAdjacentHTML('beforeend', momentTemplate02(template))
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate02(moment, template))
 
                 break;
 
             case '03':
 
-                momentContainer.insertAdjacentHTML('beforeend', momentTemplate03(template))
+                momentContainer.insertAdjacentHTML('beforeend', momentTemplate03(moment, template))
 
                 break;
         }
     })
 }
 
+// Init
 app.init = () => {
 
     let moments = [];
