@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="src/js/index.js" defer type="module"></script>
-    <link href="/src/css/index.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link href="/src/css/gallery.css" rel="stylesheet">
+    <link href="/src/css/loader.css" rel="stylesheet">
     <title>24 Timer</title>
 </head>
 <body>
+    <header>
+        <nav>navigation</nav>
+    </header>
 
-    <h1>Et Moments Gather</h1>
-    <pre class="moment-debug"></pre>
-
-    <h1>Alle Moments</h1>
-    <pre class="data-debug"></pre>
+    <section class="gallery-container">
+        <lottie-player class="preloader" src="https://assets6.lottiefiles.com/datafiles/F8PUZm7tlfP4fKL/data.json"  background="transparent"  speed="1" loop  autoplay></lottie-player>
+    </section>
 
 </body>
 </html>

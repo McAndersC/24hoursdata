@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        * body {
+            font-family: "Rubik", sans-serif;
+            width: 100vw;
+            margin: auto;
+        }
+
+        /*---------- presets ----------*/
+        .container-75 {
+            width: 75vw;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .square {
+            width: 0.6rem;
+            height: 0.6rem;
+            display: inline-block;
+            margin-right: 0.3rem;
+            background-color: #6667a8;
+        }
+
+        /*---------- hero ----------*/
+        .hero {
+            height: 90vh;
+            width: 100%;
+            background-color: #ebebeb;
+            display: flex;
+            margin: auto;
+        }
+        .hero .container-75 .row .col1 {
+            width: 36.7vw;
+        }
+        .hero .container-75 .row .col3 {
+            width: 35.3vw;
+        }
+        .hero .container-75 .row .col3 .time {
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        .hero .container-75 .row .col3 .display-text {
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 300;
+        }
+        .hero .container-75 .row .col3 .body-text {
+            font-size: 1.05rem;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+        .hero .container-75 .row .col3 .byline {
+            font-size: 1.05rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+        .hero .container-75 .row .col3 .spacer {
+            height: 2.5vh;
+        }
+
+        /*---------- 3x4 billeder styling ----------*/
+        .threexfour {
+            padding-top: 57px;
+            padding-bottom: 57px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            margin: auto;
+        }
+        .threexfour .container-75 .pic-text {
+            font-size: 0.9rem;
+            line-height: 1.2;
+            font-weight: 400;
+            color: #ebebeb;
+        }
+
+        .fourxthree {
+            padding-top: 0.5rem;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            margin: auto;
+        }
+        .fourxthree .container-75 .pic-text {
+            font-size: 0.9rem;
+            line-height: 1.2;
+            font-weight: 400;
+            color: #ebebeb;
+        }
+
+        .onexone {
+            padding-top: 57px;
+            padding-bottom: 57px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            margin: auto;
+        }
+        .onexone .container-75 .pic-text {
+            font-size: 0.9rem;
+            line-height: 1.2;
+            font-weight: 400;
+            color: #ebebeb;
+        }
